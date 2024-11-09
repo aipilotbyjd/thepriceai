@@ -20,11 +20,6 @@ const TAB_SCREENS = [
     icon: 'flame',
   },
   {
-    name: 'products',
-    label: 'Products',
-    icon: 'cube',
-  },
-  {
     name: 'alerts',
     label: 'Alerts',
     icon: 'bell',
