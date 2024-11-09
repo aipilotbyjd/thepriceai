@@ -1,7 +1,7 @@
 import { Tabs } from 'expo-router';
 import { Platform } from 'react-native';
 import { COLORS, SPACING } from '~/constants/theme';
-import { TabBarIcon } from '../../components/TabBarIcon';
+import { TabBarIcon } from '~/components/TabBarIcon';
 
 const TAB_SCREENS = [
   {
@@ -10,24 +10,29 @@ const TAB_SCREENS = [
     icon: 'home',
   },
   {
-    name: 'search',
-    label: 'Search',
-    icon: 'search',
+    name: 'top-deals',
+    label: 'Top Deals',
+    icon: 'tag',
   },
   {
-    name: 'offers',
-    label: 'Offers',
-    icon: 'percentage',
+    name: 'trending',
+    label: 'Trending',
+    icon: 'flame',
   },
   {
-    name: 'cart',
-    label: 'Cart',
-    icon: 'shopping-cart',
+    name: 'products',
+    label: 'Products',
+    icon: 'cube',
+  },
+  {
+    name: 'alerts',
+    label: 'Alerts',
+    icon: 'bell',
   },
   {
     name: 'account',
     label: 'Account',
-    icon: 'user',
+    icon: 'person',
   },
 ] as const;
 
@@ -60,7 +65,7 @@ export default function TabLayout() {
           options={{
             title: label,
             tabBarIcon: ({ color, focused }) => (
-              <TabBarIcon name={icon} color={color} label={label} focused={focused} />
+              <TabBarIcon name={icon} color={color} focused={focused} />
             ),
           }}
         />
