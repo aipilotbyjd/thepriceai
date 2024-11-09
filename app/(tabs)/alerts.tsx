@@ -33,21 +33,23 @@ export default function AlertsScreen() {
   );
 
   return (
-    <Screen>
-      <View className="flex-1 p-4">
-        <Text className="text-2xl font-bold text-secondary mb-6">Your Alerts</Text>
-        <FlatList
-          data={alertsData}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.id}
-          contentContainerStyle={{ paddingBottom: 20 }}
-          ListEmptyComponent={
-            <View className="items-center justify-center flex-1">
-              <Text className="text-gray-600">No alerts available.</Text>
-            </View>
-          }
-        />
-      </View>
+    <Screen scrollable={false}>
+      <FlatList
+        data={alertsData}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id}
+        contentContainerStyle={{ padding: 16 }}
+        ListHeaderComponent={
+          <Text className="text-2xl font-bold text-secondary mb-6">
+            Your Alerts
+          </Text>
+        }
+        ListEmptyComponent={
+          <View className="items-center justify-center flex-1">
+            <Text className="text-gray-600">No alerts available.</Text>
+          </View>
+        }
+      />
     </Screen>
   );
 } 
